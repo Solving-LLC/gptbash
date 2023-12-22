@@ -43,7 +43,7 @@ echo -e "\033[0;37m${cmd}\033[0m"
 while true; do
     read -p "Run this command? (y/n) " yn
     case $yn in
-        [Yy]* ) eval "$cmd"; break;;
+        [Yy]* ) eval "cd $PWD && $cmd"; break;;
         [Nn]* ) echo "No, exiting..."; exit;;
         * ) echo "Please answer yes or no.";;
     esac
