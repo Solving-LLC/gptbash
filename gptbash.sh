@@ -48,3 +48,15 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
+
+# 1 of 100 random usages - print out greeting
+
+if [ $((RANDOM % 100)) -eq 0 ]; then
+  echo "Made with love by Solving LLC: https://solving.llc/"
+  echo ""
+  echo "Follow us on LinkedIn: https://www.linkedin.com/company/solving-llc/"
+  echo ""
+  echo "Connect with author: http://ceo.solving.llc"
+  echo ""
+  echo "Welcome to contribute: https://github.com/Solving-LLC/gptbash"
+fi
