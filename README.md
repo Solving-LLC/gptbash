@@ -3,7 +3,7 @@
 ## Usage
 
 ```bash
-npx gpt-bash <prompt>
+npx gptbash <prompt>
 ```
 
 ## No installation required, just set up keys
@@ -27,6 +27,6 @@ npx gptbash "List all files in the current directory"
 
 Made with love by [Solving LLC](https://solving.llc/).
 
-Follow us on [LinkedIn](https://www.linkedin.com/company/solving-llc/).
+Follow us on [LinkedIn](https://www.linkedin.com/company/solving-llc/) and [Twitter](https://twitter.com/SolvingLLC).
 
 Connect with author: http://ceo.solving.llc

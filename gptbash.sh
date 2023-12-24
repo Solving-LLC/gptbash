@@ -54,7 +54,9 @@ done
 if [ $((RANDOM % 100)) -eq 0 ]; then
   echo "Made with love by Solving LLC: https://solving.llc/"
   echo ""
-  echo "Follow us on LinkedIn: https://www.linkedin.com/company/solving-llc/"
+  echo "Follow us:"
+  echo "LinkedIn: https://www.linkedin.com/company/solving-llc/"
+  echo "Twitter: https://twitter.com/SolvingLLC"
   echo ""
   echo "Connect with author: http://ceo.solving.llc"
   echo ""
