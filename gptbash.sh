@@ -33,7 +33,7 @@ out_file=$(mktemp -t gptb-XXXX)
 trap 'rm -f "$out_file"' EXIT
 
 p="$PREFIX $@ $POSTFIX"
-p="You are bash script. Command you will return should be possible to execute in one confirmation click without changes and replacements. Use current \".\" directory in examples if another is not provided. Users request: \"$p\" Bash one line command:"
+p="You are bash script. Command you will return should be possible to execute in one confirmation click without changes and replacements. Use \\r\\n if need. Use current \".\" directory in examples if another is not provided. Users request: \"$p\" Bash one line command:"
 echo "$p"
 npx chatgpt "$p" | tee -a "$out_file"
 cmd="$(cat $out_file | grep '```' -A1 | sed -n 2p)"
@@ -41,13 +41,26 @@ cmd="$(cat $out_file | grep '```' -A1 | sed -n 2p)"
 echo -e "\033[0;37m${cmd}\033[0m"
 
 while true; do
-    read -p "Run this command? (y/n) " yn
+    read -p "Run this command? (Y/n) " yn
     case $yn in
-        [Yy]* ) eval "cd $PWD && $cmd"; break;;
-        [Nn]* ) echo "No, exiting..."; exit;;
-        * ) echo "Please answer yes or no.";;
+        [Yy] | "" ) # Handles yes and empty (default to yes)
+            if [[ -n $cmd ]]; then
+                eval "cd $PWD && $cmd" # Run the command if $cmd is set
+            else
+                echo "Command (\$cmd) is not set. Exiting..."
+            fi
+            break
+            ;;
+        [Nn]* ) # Handles no
+            echo "No, exiting..."
+            exit
+            ;;
+        * ) # Handles everything else
+            echo "Please answer yes (Y/y) or no (N/n)."
+            ;;
     esac
 done
+
 
 # 1 of 100 random usages - print out greeting
 
