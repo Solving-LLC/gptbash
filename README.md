@@ -25,7 +25,7 @@ npx gptbash "List all files in the current directory"
 
 ## Credits
 
-Made with love by [Solving LLC](https://solving.llc/).
+Made with love by [Solving LLC](https://solving.llc/). Thanks for [@popstas](https://github.com/popstas)
 
 Follow us on [LinkedIn](https://www.linkedin.com/company/solving-llc/) and [Twitter](https://twitter.com/SolvingLLC).
 
